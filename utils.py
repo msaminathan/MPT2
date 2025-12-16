@@ -15,6 +15,36 @@ def get_stock_universe():
         "Energy": ["XOM", "CVX", "COP", "SLB", "EOG", "MPC", "PSX", "VLO", "OXY"]
     }
 
+def get_ticker_name_mapping():
+    """
+    Returns a dictionary mapping tickers to company names.
+    """
+    return {
+        # High Tech
+        "AAPL": "Apple Inc.", "MSFT": "Microsoft Corporation", "GOOGL": "Alphabet Inc.", 
+        "AMZN": "Amazon.com Inc.", "NVDA": "NVIDIA Corporation", "TSLA": "Tesla Inc.", 
+        "META": "Meta Platforms Inc.", "AMD": "Advanced Micro Devices", "INTC": "Intel Corporation", 
+        "CSCO": "Cisco Systems",
+        # Finance
+        "JPM": "JPMorgan Chase & Co.", "BAC": "Bank of America", "WFC": "Wells Fargo & Co.", 
+        "C": "Citigroup Inc.", "GS": "Goldman Sachs Group", "MS": "Morgan Stanley", 
+        "BLK": "BlackRock Inc.", "V": "Visa Inc.", "MA": "Mastercard Inc.", "AXP": "American Express",
+        # Healthcare
+        "JNJ": "Johnson & Johnson", "PFE": "Pfizer Inc.", "UNH": "UnitedHealth Group", 
+        "ABBV": "AbbVie Inc.", "MRK": "Merck & Co.", "TMO": "Thermo Fisher Scientific", 
+        "LLY": "Eli Lilly and Co.", "AMGN": "Amgen Inc.", "BMY": "Bristol-Myers Squibb", 
+        "GILD": "Gilead Sciences",
+        # Consumer Goods
+        "PG": "Procter & Gamble", "KO": "Coca-Cola Company", "PEP": "PepsiCo Inc.", 
+        "COST": "Costco Wholesale", "WMT": "Walmart Inc.", "NKE": "NIKE Inc.", 
+        "MCD": "McDonald's Corp", "SBUX": "Starbucks Corp", "EL": "Estee Lauder Cos", 
+        "CL": "Colgate-Palmolive",
+        # Energy
+        "XOM": "Exxon Mobil Corp", "CVX": "Chevron Corp", "COP": "ConocoPhillips", 
+        "SLB": "Schlumberger Ltd", "EOG": "EOG Resources", "MPC": "Marathon Petroleum", 
+        "PSX": "Phillips 66", "VLO": "Valero Energy", "OXY": "Occidental Petroleum"
+    }
+
 def fetch_stock_data(tickers, period="5y"):
     """
     Fetches historical adjusted close prices for the given tickers.
