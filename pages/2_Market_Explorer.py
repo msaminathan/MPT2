@@ -62,6 +62,18 @@ if df.empty:
     st.error("No data found for the selected tickers.")
     st.stop()
 
+# --- Company Reference Table ---
+with st.expander("Show Selected Company Names", expanded=False):
+    ticker_map = utils.get_ticker_name_mapping()
+    company_data = []
+    for t in selected_tickers:
+        company_data.append({
+            "Ticker": t,
+            "Company Name": ticker_map.get(t, "Unknown / Custom")
+        })
+    company_df = pd.DataFrame(company_data)
+    st.dataframe(company_df, use_container_width=True, hide_index=True)
+
 # --- Visualizations ---
 
 # Normalized Price Chart (Rebased to 100)
